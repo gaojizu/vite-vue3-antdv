@@ -1,16 +1,14 @@
-# Vue 3 + Vite
+# Vue3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+模板是自己搭建，所以不一定适合您的项目规划，下载之后根据自己的需要进行功能的分离和拆解，这里不做万能模板的处理，项目会持续更新
+vue3的版本加上目前的vite 构建 UI库使用的是antdv的最新版本，组件是全局引入，项目如果需要按需引入的自行处理配置文件即可！
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 ##### 代码提交说明
 - feat  新功能
 - fix 修复bug
 - docs 更新文档
 - style 更新代码格式
-- refactot 重构 不尽兴bug修复 也不进行新功能添加
+- refactot 重构 不进行bug修复 也不进行新功能添加
 - perf 性能优化
 - test 增加测试
 - chore 构建过程或者是辅助工具的变动

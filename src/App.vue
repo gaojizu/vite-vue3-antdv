@@ -9,5 +9,6 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import './assets/css/global.scss'
 </style>
