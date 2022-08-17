@@ -5,7 +5,17 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-
+##### 代码提交说明
+- feat  新功能
+- fix 修复bug
+- docs 更新文档
+- style 更新代码格式
+- refactot 重构 不尽兴bug修复 也不进行新功能添加
+- perf 性能优化
+- test 增加测试
+- chore 构建过程或者是辅助工具的变动
+- revert 代码回退
+- build 项目打包
 ### 该项目创建过程
 
 #### 安装vite
@@ -100,3 +110,12 @@ import antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 app.use(antd)
 ```
+#### 添加本地调试网络地址
+```json
+ "scripts": {
+    "dev": "vite --host 192.168.31.181",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+```
+> use --host 192.168.31.181 暴露出去可以供局域网内访问的地址
