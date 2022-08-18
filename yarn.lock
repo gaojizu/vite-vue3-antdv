@@ -2120,11 +2120,6 @@
   dependencies:
     "compute-scroll-into-view" "^1.0.17"
 
-"scss-loader@^0.0.1":
-  "integrity" "sha512-SbT/smRJjkvvdHSEdAYAplosVkrtaSwwgUlnQCOuDS5sOKNjrS/eYCMvKeV6+YxK5cCOCsOJZd3vltrXatFp+g=="
-  "resolved" "https://registry.npmjs.org/scss-loader/-/scss-loader-0.0.1.tgz"
-  "version" "0.0.1"
-
 "scss-tokenizer@^0.3.0":
   "integrity" "sha512-14Zl9GcbBvOT9057ZKjpz5yPOyUWG2ojd9D5io28wHRYsOrs7U95Q+KNL87+32p8rc+LvDpbu/i9ZYjM9Q+FsQ=="
   "resolved" "https://registry.npmjs.org/scss-tokenizer/-/scss-tokenizer-0.3.0.tgz"
@@ -2327,6 +2322,11 @@
   "version" "3.0.0"
   dependencies:
     "min-indent" "^1.0.0"
+
+"style-loader@^3.3.1":
+  "integrity" "sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ=="
+  "resolved" "https://registry.npmjs.org/style-loader/-/style-loader-3.3.1.tgz"
+  "version" "3.3.1"
 
 "supports-color@^5.3.0":
   "integrity" "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="

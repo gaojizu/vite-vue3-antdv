@@ -2,8 +2,16 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
+const isProduction = false;
 export default defineConfig({
-  plugins: [vue()],
+  // 在生产中服务时的基本公共路径
+  base: isProduction ? './' : '',
+  // 配置中指明将会把 serve 和 build 时的模式都覆盖掉,serve 时默认 'development'，build 时默认 'production'
+  mode: 'development',
+  // 在开发时会被定义为全局变量，而在构建时则是静态替换
+  define: '',
+  // 静态资源服务的文件夹
+  publicDir: 'assets',
   server: {
     port: 3030, //更改默认端口5173
     open: false | 'google', // 是否自动开启浏览器
@@ -19,11 +27,14 @@ export default defineConfig({
     port: 9000,
     strictPort: true,//不可以替换别的端口
   },
+  // 全局css 
   css: {
     preprocessorOptions: {
       scss: {
-        additionalDate: `@import "./src/assets/css/global.scss"`
+        additionalData: '@import "./src/assets/css/global.scss";'
       }
     }
-  }
+  },
+  plugins: [vue()],
+
 })

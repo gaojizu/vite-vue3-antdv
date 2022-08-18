@@ -8,8 +8,14 @@ import 'ant-design-vue/dist/antd.css'
 // 进行挂载路由文件
 const app = createApp(App)
 //进行错误和警告拦截
-app.config.errorHandler = (err,vm,info)=>{
+app.config.errorHandler = (err, vm, info) => {
     console.error(err)
+    console.log(vm)
+    console.error(info)
+}
+// 进行警告信息捕捉
+app.config.warnHandler = (warn,vm,info)=>{
+    console.warn(warn)
     console.log(vm)
     console.error(info)
 }

@@ -10,13 +10,50 @@
                 <h1>THIS IS IMG</h1>
             </div>
             <div class="r-form">
-                form
+                <a-form :model="formState" name="basic" :label-col="{ span: 8 }" :wrapper-col="{ span: 16 }"
+                    autocomplete="off" @finish="onFinish" @finishFailed="onFinishFailed">
+                    <a-form-item label="用户名" name="username" :rules="[{ required: true, message: '请输入你的用户名' }]">
+                        <a-input v-model:value="formState.username" />
+                    </a-form-item>
+
+                    <a-form-item label="密码" name="password" :rules="[{ required: true, message: '请输入你的密码' }]">
+                        <a-input-password v-model:value="formState.password" />
+                    </a-form-item>
+
+                    <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
+                        <a-checkbox v-model:checked="formState.remember">Remember me</a-checkbox>
+                    </a-form-item>
+
+                    <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
+                        <a-button type="primary" html-type="submit">登录</a-button>
+                    </a-form-item>
+                </a-form>
             </div>
         </div>
     </div>
 </template>
 <script setup>
-
+import { reactive, createApp } from 'vue'
+import tools from '../../assets/js/tools.js'
+const formState = reactive({
+    username: '',
+    password: '',
+    remember: true
+})
+const onFinish = (value) => {
+    if (value.username == 'admin' && value.password === 'admin123') {
+        //登录成功 跳转到首页
+        // 提示登录成功
+        console.log(tools)
+        tools.message('info', '登录成功')
+        return
+        createApp.tools.message('info', '登录成功')
+    }
+    console.log(value)
+}
+const onFinishFailed = (errInfo) => {
+    console.log(errInfo)
+}
 </script>
 <style scoped lang="scss">
 .content {
@@ -52,13 +89,17 @@
         .l-show-img {
             width: 35%;
             height: 100%;
-            border: 1px solid #f40;
-            // @extend .flex-row-center;
             writing-mode: vertical-lr;
+            @extend .flex-row-center;
+
+            h1 {
+                @extend .common-color;
+            }
         }
 
         .r-form {
-            border: 1px solid #f90;
+            width: 60%;
+            @extend .flex-row-center;
         }
     }
 
