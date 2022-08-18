@@ -33,21 +33,24 @@
     </div>
 </template>
 <script setup>
-import { reactive, createApp } from 'vue'
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router';
 import tools from '../../assets/js/tools.js'
 const formState = reactive({
     username: '',
     password: '',
     remember: true
 })
+const router = useRouter()
 const onFinish = (value) => {
     if (value.username == 'admin' && value.password === 'admin123') {
         //登录成功 跳转到首页
         // 提示登录成功
-        console.log(tools)
         tools.message('info', '登录成功')
-        return
-        createApp.tools.message('info', '登录成功')
+        //开启进度条
+        //页面跳转 到首页
+        router.push('/')
+
     }
     console.log(value)
 }

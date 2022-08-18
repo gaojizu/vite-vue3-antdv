@@ -6,6 +6,10 @@ import other from './other'
 const routes_index = [
     {
         path: '/',
+        redirect:'/main',
+    },
+    {
+        path: '/main',
         name: 'main',
         component: () => import('../view/main/index.vue')
     },
