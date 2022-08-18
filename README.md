@@ -37,13 +37,14 @@ npm install --save-dev sass-loader node-sass sass
 ```js
 export default defineConfig({
   plugins: [vue()],
-  css:{
-    preprocessorOptions:{
-      scss:{
-        additionalDate : `@import "./src/assets/css/global.scss"` // 这是我本地创建的一个全局的scss文件，你们请自行创建
+   // 全局css 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/assets/css/global.scss";' // 此处最后的分号不要忘记，可能会出错
       }
     }
-  }
+  },
 })
 ```
 #### 创建路由文件
@@ -117,3 +118,32 @@ app.use(antd)
   },
 ```
 > use --host 192.168.31.181 暴露出去可以供局域网内访问的地址
+#### 配置全局主题样式
+> 仅供测试样式使用
+```scss
+//   设置基本颜色值
+$baseColor : #000; //@error
+$nav-bgc : #fff !default; //顶部nav背景颜色
+$nav-color : #000 !default; //顶部nav字体颜色
+$font-color:#fff; //
+$button-color : #1890ff !default; //
+$left-menu-bgc : #011528  !default; // 左侧菜单栏背景颜色
+$left-font-color : #fff !default; //左侧菜单栏文字颜色
+$content-bgc:#F0F0F0 !default;  //主题内容区背景颜色
+$test-color:#000 !default; //默认测试颜色 
+```
+#### 全局样式使用例子
+```vue
+> 以下代码仅供测试
+<style scoped lang="scss">
+  .l-show-img {
+      width: 35%;
+      height: 100%;
+      writing-mode: vertical-lr;
+      @extend .flex-row-center;
+       h1 {
+          @extend .common-color;
+      }
+   }
+</style>
+```
