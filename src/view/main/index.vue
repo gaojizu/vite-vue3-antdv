@@ -20,9 +20,11 @@
 </template>
 <script setup>
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue';
-import { ref, onMounted , getCurrentInstance} from 'vue'
+import { ref, onMounted, getCurrentInstance, inject } from 'vue'
 import Menu from '../../components/layout/menu.vue'
+import api  from '../../http/apis/main/main.js'
 const { proxy } = getCurrentInstance();
+
 const collapsed = ref(false)
 // 生命周期测试第一个阶段
 onMounted(() => {
@@ -31,8 +33,14 @@ onMounted(() => {
     const params = {
         name: 'jim'
     }
-    console.log(proxy)
-    // proxy.$axios(('api', 'get', params)=> { })
+    console.log(api)
+    api.testApi(params).then(res => {
+        console.log(params)
+        console.log(res)
+    }).catch(err => {
+        console.log(err)
+    })
+
 })
 </script>
 <style scoped lang="scss">

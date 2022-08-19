@@ -9,7 +9,10 @@ import axios from 'axios'
 const config = {
     baseUrl: 'http://localhost:3000',
     timeOut: 30000,
-    header: 'no-header'
+    // header: {
+    //     "Content-Type" : "multipart/form-data;charset=UTF-8",
+    //     "Access-Control-Allow-Origin-Type" : "*"
+    // }
 }
 
 const server = axios.create(config)
@@ -45,20 +48,20 @@ server.interceptors.response.use((response) => {
  * @params method 请求方式
  * @params p 请求参数
  */
-server((url, method, p) => {
-    return new Promise((resolve, reject) => {
-        const _Params = method == 'get' ? { params: p } : { data: p }
-        axios({
-            method,
-            url,
-            _Params
-        }).then(res => {
-            resolve(res)
-        }).catch(err => {
-            reject(err)
-        })
-    })
-})
+// server((url, method, p) => {
+//     return new Promise((resolve, reject) => {
+//         const _Params = method == 'get' ? { params: p } : { data: p }
+//         axios({
+//             method,
+//             url,
+//             _Params
+//         }).then(res => {
+//             resolve(res)
+//         }).catch(err => {
+//             reject(err)
+//         })
+//     })
+// })
 
 //导出默认axios配置
 export default server
