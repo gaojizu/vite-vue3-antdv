@@ -11,7 +11,7 @@
                     </a-layout-header>
                     <a-layout-content
                         :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
-                        Content 
+                        Content
                     </a-layout-content>
                 </div>
             </a-layout>
@@ -20,9 +20,20 @@
 </template>
 <script setup>
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue';
-import { ref } from 'vue'
+import { ref, onMounted , getCurrentInstance} from 'vue'
 import Menu from '../../components/layout/menu.vue'
+const { proxy } = getCurrentInstance();
 const collapsed = ref(false)
+// 生命周期测试第一个阶段
+onMounted(() => {
+    console.log('passing')
+    //开始请求数据
+    const params = {
+        name: 'jim'
+    }
+    console.log(proxy)
+    // proxy.$axios(('api', 'get', params)=> { })
+})
 </script>
 <style scoped lang="scss">
 .trigger {
