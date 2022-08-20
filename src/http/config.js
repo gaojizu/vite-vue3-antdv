@@ -5,9 +5,9 @@
 
 import axios from 'axios'
 // import qs  from 'qs'
-
+console.log(import.meta.env)
 const config = {
-    baseUrl: 'http://localhost:3000',
+    baseURL: import.meta.env.VITE_APP_BASE_URL, //配置区分环境
     timeOut: 30000,
     // header: {
     //     "Content-Type" : "multipart/form-data;charset=UTF-8",

@@ -22,20 +22,21 @@
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue';
 import { ref, onMounted, getCurrentInstance, inject } from 'vue'
 import Menu from '../../components/layout/menu.vue'
-import api  from '../../http/apis/main/main.js'
-const { proxy } = getCurrentInstance();
+import api from '../../http/apis/main/main.js'
 
 const collapsed = ref(false)
 // 生命周期测试第一个阶段
 onMounted(() => {
-    console.log('passing')
-    //开始请求数据
-    const params = {
-        name: 'jim'
+    console.log(import.meta.env)
+    //开始请求数据 使用的是测试数据 天气预报 测试的是目的是配置跨域请求
+    const data = {
+        page: 1,
+        size: 100,
+        location: 'tianqihome-shortMovie',
+        _: Date.now()
     }
-    console.log(api)
-    api.testApi(params).then(res => {
-        console.log(params)
+    api.getWeather(data).then(res => {
+        console.log(data)
         console.log(res)
     }).catch(err => {
         console.log(err)

@@ -1,11 +1,11 @@
 import options from '../../index.js'
-const testApi = data => {
-    return options.post({
-        url: "/api/test",
+const getWeather = data => {
+    return options.get({
+        url: "/GetListByLocation",
         data
     })
 }
 
 export default {
-    testApi
+    getWeather
 }
