@@ -147,3 +147,42 @@ $test-color:#000 !default; //默认测试颜色
    }
 </style>
 ```
+#### 封装请求
+> 后续优化之后贴出来
+#### 配置代理，处理跨域
+- vite.config.js
+```js
+ server: {
+    port: 3030, //更改默认端口5173
+    open: false | 'google', // 是否自动开启浏览器
+    proxy: {
+      '/api': {
+        target: 'https://v-api.2345.com/shortVideo',//这是跨域的原本地址
+        changeOrigin: true,//是否开启跨域
+        // rewrite: api => api.replace(/^\/api/, '') // 将真正的请求使用正则替换掉api因为url本身就不存在api 这里相当于重写了路径
+      }
+    }
+  },
+```
+#### 配置打包部署环境地址
+```shell
+// in project
+touch .env.development
+touch .env.production
+```
+- .env.development
+```js
+# 开发环境地址配置
+ENV = 'development'
+VITE_APP_BASE_URL ='/api/'
+VITE_APP_BASE_NAME  =  'vite development'
+```
+- .env.production
+```js
+# 生产环境地址配置
+ENV = 'production'
+# 测试使用 天气预报API
+VITE_APP_BASE_URL = 'https://v-api.2345.com/shortVideo' 
+VITE_APP_BASE_NAME ='vite production'
+```
+
