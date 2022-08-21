@@ -27,7 +27,6 @@ import api from '../../http/apis/main/main.js'
 const collapsed = ref(false)
 // 生命周期测试第一个阶段
 onMounted(() => {
-    console.log(import.meta.env)
     //开始请求数据 使用的是测试数据 天气预报 测试的是目的是配置跨域请求
     const data = {
         page: 1,
