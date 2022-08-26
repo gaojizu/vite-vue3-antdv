@@ -4,21 +4,41 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-26 10:34:50
+ * @LastEditTime: 2022-08-26 16:18:03
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/menu.vue
 -->
-<!-- slider menu菜单栏 -->
 <template>
   <div>
-    <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+    <a-layout-sider
+      :style="{ height: '100vh' }"
+      v-model:collapsed="collapsed"
+      :trigger="null"
+      collapsible
+    >
       <div class="logo">logo</div>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <div v-for="i in 30" :key="i" @click="toPage(i)">
-          <a-menu-item :key="i + ''">
-            <!-- icon  -->
-            <user-outlined />
-            <span>nav {{ i }}</span>
-          </a-menu-item>
+        <div v-for="(item, index) in menuLists" :key="index">
+          <template v-if="item.children && item.children.length > 0">
+            <a-sub-menu :key="index" @click="toPage(item.path)">
+              <template #title>
+                <span>
+                  <local-icon :type="item.icon" />
+                  <span>{{ item.name }}</span>
+                </span>
+              </template>
+              <div v-for="(it, inde) in item.children" :key="inde">
+                <a-menu-item @click.stop="toPage(it.path)" :key="inde">{{
+                  it.name
+                }}</a-menu-item>
+              </div>
+            </a-sub-menu>
+          </template>
+          <template v-else>
+            <a-menu-item :key="index + ''" @click="toPage(item.path)">
+              <local-icon :type="item.icon" />
+              <span>{{ item.name }}</span>
+            </a-menu-item></template
+          >
         </div>
       </a-menu>
     </a-layout-sider>
@@ -27,11 +47,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from "@ant-design/icons-vue";
+import menuLists from "../../assets/js/menu.js";
 
 const selectedKeys = ref(["1"]);
 const router = useRouter();
@@ -39,9 +55,8 @@ const router = useRouter();
 const props = defineProps({
   collapsed: Boolean,
 });
-let toPage = (p) => {
-  router.push("reports");
-  console.log(p);
+let toPage = (path) => {
+  router.push(path);
 };
 </script>
 <style scoped lang="scss">
@@ -52,7 +67,6 @@ let toPage = (p) => {
   color: #fff;
   position: sticky;
   top: 0;
-  z-index: 999999;
   @extend .flex-row-center;
 }
 

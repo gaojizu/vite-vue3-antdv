@@ -147,6 +147,34 @@ $test-color:#000 !default; //默认测试颜色
    }
 </style>
 ```
+#### 引入pinia进行全局状态管理
+> 这里需要进行布局封装，所以这里的菜单栏的收缩需要进行全局状态的管理，使用pinia进行初级管理
+- 执行脚本
+```shell
+yarn add pinia
+```
+- 配置main.js
+
+```js
+import { createPinia } from 'pinia'
+app.use(createPinia())
+```
+#### 配置icon-font
+> 因为要动态配置font，这里需要进行引入阿里图标进行使用，使用方法如下
+- 打开[阿里icon官网](https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2)
+- 打开资源管理- 我的项目
+- 新建一个项目（如果没有的话）
+- 点击右侧symbol
+- 生成链接
+##### 配置icon-font文件
+```js
+import antd from 'ant-design-vue'
+import { createFromIconfontCN } from '@ant-design/icons-vue'
+const font = createFromIconfontCN({
+    scriptUrl: '//at.alicdn.com/t/c/font_2362040_zxazlef1if8.js' //这里就是在aliicon里面生成的链接地址
+})
+app.use(antd).component('localIcon', font)
+```
 #### 封装请求
 > 后续优化之后贴出来
 #### 配置代理，处理跨域
@@ -185,4 +213,5 @@ ENV = 'production'
 VITE_APP_BASE_URL = 'https://v-api.2345.com/shortVideo' 
 VITE_APP_BASE_NAME ='vite production'
 ```
+
 

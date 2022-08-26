@@ -1,29 +1,18 @@
 <template>
   <div>
     <!-- 头部 -->
-    <a-layout>
+    <a-layout has-sider>
       <!-- 菜单 -->
-      <Menu :collapsed="collapsed"></Menu>
+      <Menu :collapsed="state.getSliderStates"></Menu>
       <a-layout>
         <div style="width: 100%; position: fixed">
-          <a-layout-header style="background: #fff; padding: 0">
-            <menu-unfold-outlined
-              v-if="collapsed"
-              class="trigger"
-              @click="() => (collapsed = !collapsed)"
-            />
-            <menu-fold-outlined
-              v-else
-              class="trigger"
-              @click="() => (collapsed = !collapsed)"
-            />
-          </a-layout-header>
-          <a-layout-content
-            class="layout-content"
-          >
-            <!-- content -->
+          <Header></Header>
+          <a-layout-content class="layout-content">
             <router-view></router-view>
           </a-layout-content>
+          <a-layout-footer :style="{ textAlign: 'center' }">
+            VITE VUE3 ©2022 Created by Clearlove
+          </a-layout-footer>
         </div>
       </a-layout>
     </a-layout>
@@ -33,6 +22,9 @@
 import { ref, onMounted, getCurrentInstance } from "vue";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
 import Menu from "../src/components/layout/menu.vue";
+import Header from "../src/components/layout/header.vue";
+import useStore from "../src/pinia/index.js";
+const { state } = useStore();
 </script>
 <style lang="scss" scoped>
 // @import './assets/css/global.scss'
@@ -51,6 +43,6 @@ import Menu from "../src/components/layout/menu.vue";
   margin: 24px 16px;
   padding: 24px;
   background: #fff;
-  min-height: 280px;
+  min-height: 300px;
 }
 </style>
