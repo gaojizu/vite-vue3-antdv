@@ -4,13 +4,13 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 14:18:05
- * @LastEditTime: 2022-08-26 15:05:29
+ * @LastEditTime: 2022-08-26 17:10:26
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/pinia/index.js
  */
-import { paramsStore } from './statesMange.js'
+import { paramsStore } from "./statesMange.js";
 // 将出口文件导出
 export default function useStore() {
     return {
-        state: paramsStore(),//当前的状态管理相关 导出模块
-    }
+        state: paramsStore(), //当前的状态管理相关 导出模块
+    };
 }

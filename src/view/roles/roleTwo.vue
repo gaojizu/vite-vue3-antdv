@@ -12,7 +12,5 @@
     <h1>角色2</h1>
   </div>
 </template>
-<script setup>
-</script>
-<style scoped>
-</style>
+<script setup></script>
+<style scoped></style>
