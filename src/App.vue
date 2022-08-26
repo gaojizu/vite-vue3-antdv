@@ -3,10 +3,10 @@
     <!-- 头部 -->
     <a-layout has-sider>
       <!-- 菜单 -->
-      <Menu :collapsed="state.getSliderStates"></Menu>
+      <layout-menu :collapsed="state.getSliderStates"></layout-menu>
       <a-layout>
         <div style="width: 100%; position: fixed">
-          <Header></Header>
+          <layout-header></layout-header>
           <a-layout-content class="layout-content">
             <router-view></router-view>
           </a-layout-content>
@@ -21,8 +21,9 @@
 <script setup>
 import { ref, onMounted, getCurrentInstance } from "vue";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
-import Menu from "../src/components/layout/menu.vue";
-import Header from "../src/components/layout/header.vue";
+import LayoutMenu from "../src/components/layout/layout-menu.vue";
+import LayoutHeader from "./components/layout/layout-header.vue";
+
 import useStore from "../src/pinia/index.js";
 const { state } = useStore();
 </script>
