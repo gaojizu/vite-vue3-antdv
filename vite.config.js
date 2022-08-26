@@ -1,3 +1,12 @@
+/*
+ * @use: 
+ * @description: 
+ * @SpecialInstructions: 无
+ * @Author: clearlove
+ * @Date: 2022-08-23 12:59:43
+ * @LastEditTime: 2022-08-23 13:06:35
+ * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/vite.config.js
+ */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
@@ -5,7 +14,7 @@ export default defineConfig({
   // 静态资源服务的文件夹
   publicDir: './assets',
   server: {
-    port: 3030, //更改默认端口5173
+    port: 8080, //更改默认端口5173
     open: false | 'google', // 是否自动开启浏览器
     proxy: {
       '/api': {

@@ -1,3 +1,12 @@
+/*
+ * @use: 
+ * @description: 
+ * @SpecialInstructions: 无
+ * @Author: clearlove
+ * @Date: 2022-08-23 12:59:43
+ * @LastEditTime: 2022-08-26 10:28:12
+ * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/main.js
+ */
 import { createApp } from 'vue'
 import './style.css'
 // import '../src/assets/css/global.scss'
@@ -5,6 +14,8 @@ import App from './App.vue'
 import router from '../src/routers/index.js'
 import antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
+//引入echart插件
+import * as echarts from 'echarts'
 // 进行挂载路由文件
 const app = createApp(App)
 //进行错误和警告拦截
@@ -19,7 +30,12 @@ app.config.warnHandler = (warn, vm, info) => {
     console.log(vm)
     console.error(info)
 }
+
 //配置全局的请求封装
 app.use(antd)
 app.use(router)
+app.config.globalProperties.test = () => {
+    return true
+}
+app.config.globalProperties.$echarts = echarts // 封装到全局
 app.mount("#app")
