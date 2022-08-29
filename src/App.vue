@@ -1,3 +1,12 @@
+<!--
+ * @use: 
+ * @description: 
+ * @SpecialInstructions: 无
+ * @Author: clearlove
+ * @Date: 2022-08-26 16:27:25
+ * @LastEditTime: 2022-08-29 08:10:43
+ * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/App.vue
+-->
 <template>
   <div>
     <!-- 头部 -->

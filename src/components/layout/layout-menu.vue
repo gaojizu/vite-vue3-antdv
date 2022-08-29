@@ -4,8 +4,8 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-26 16:44:37
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layoutmenu.vue
+ * @LastEditTime: 2022-08-29 08:12:05
+ * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layout-menu.vue
 -->
 <template>
   <div>
@@ -49,7 +49,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import menuLists from "../../assets/js/menu.js";
 
-const selectedKeys = ref(["1"]);
+const selectedKeys = ref(["0"]);
 const router = useRouter();
 //接收父组传递过来的值
 const props = defineProps({

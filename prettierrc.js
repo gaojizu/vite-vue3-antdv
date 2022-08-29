@@ -1,10 +1,10 @@
 /*
  * @use:
- * @description: pretter 配置文件
+ * @description: pretter 配置文件 找到的网上的配置文件进行直接配置的 地址是：https://zhuanlan.zhihu.com/p/356654434
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 16:55:08
- * @LastEditTime: 2022-08-26 17:10:21
+ * @LastEditTime: 2022-08-26 17:16:49
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/prettierrc.js
  */
 module.exports = {
