@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-29 08:17:23
- * @LastEditTime: 2022-08-30 10:24:14
+ * @LastEditTime: 2022-08-31 08:40:03
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/dashboard/bubble/index.vue
 -->
 <template>
@@ -35,7 +35,7 @@ onUnmounted(() => {
 
 <style lang='scss' scoped>
 .dash-bubble {
-  width: 800px;
+  width: 750px;
   height: 400px;
 }
 </style>

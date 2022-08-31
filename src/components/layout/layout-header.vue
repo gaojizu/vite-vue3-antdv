@@ -4,18 +4,20 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 14:00:15
- * @LastEditTime: 2022-08-26 16:40:28
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/header.vue
+ * @LastEditTime: 2022-08-31 09:49:18
+ * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layout-header.vue
 -->
 <template>
   <div>
     <a-layout-header class="header-bgc">
-      <menu-unfold-outlined
-        v-if="state.getSliderStates"
-        class="trigger"
-        @click="changeCollapsed"
-      />
-      <menu-fold-outlined v-else class="trigger" @click="changeCollapsed" />
+      <div class="header-line">
+        <menu-unfold-outlined
+          v-if="state.getSliderStates"
+          class="trigger"
+          @click="changeCollapsed"
+        />
+        <menu-fold-outlined v-else class="trigger" @click="changeCollapsed" />
+      </div>
     </a-layout-header>
   </div>
 </template>
@@ -26,7 +28,6 @@ import useStore from "../../pinia/index.js";
 const { state } = useStore();
 const collapsed = ref(false);
 let changeCollapsed = () => {
-  console.log(state);
   state.changeSliderStates();
 };
 </script>
@@ -42,14 +43,16 @@ let changeCollapsed = () => {
 .trigger:hover {
   color: #1890ff;
 }
-.layout-content {
-  margin: 24px 16px;
-  padding: 24px;
-  background: #fff;
-  min-height: 300px;
-}
 .header-bgc {
   background: $nav-bgc;
   padding: 0;
+
+  .header-line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 </style>

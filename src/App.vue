@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 16:27:25
- * @LastEditTime: 2022-08-30 09:28:26
+ * @LastEditTime: 2022-08-31 08:52:45
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/App.vue
 -->
 <template>
@@ -16,9 +16,15 @@
       <a-layout>
         <div style="width: 100%; position: fixed">
           <layout-header></layout-header>
-          <a-layout-content class="layout-content">
-            <router-view></router-view>
-          </a-layout-content>
+          <div class="bfc">
+            <a-layout-content
+              :class="
+                state.getSliderStates ? 'layout-content-min' : 'layout-content'
+              "
+            >
+              <router-view></router-view>
+            </a-layout-content>
+          </div>
           <!-- <a-layout-footer class="l-footer" :style="{ textAlign: 'center' }">
             VITE VUE3 ©2022 Created by Clearlove
           </a-layout-footer> -->
@@ -49,14 +55,20 @@ const { state } = useStore();
 .trigger:hover {
   color: #1890ff;
 }
-// 这里不做任何样式限制，为了直接可以获取到使用区域的正常使用范围
-.layout-content {
-  width: calc(100% - 200px); //将menu宽度去掉
-  // margin: 24px 16px;
-  // padding: 24px;
-  // background: #fff;
-  // min-height: 300px;
+.bfc {
+  display: flow-root;
+  height: 200vh;
+  .layout-content {
+    width: calc(100% - 200px); //将menu宽度去掉
+    min-width: 1400px;
+    // overflow-x: scroll;
+  }
+  .layout-content-min {
+    width: calc(100% - 80px); //将min状态下menu宽度去掉
+  }
 }
+// 这里不做任何样式限制，为了直接可以获取到使用区域的正常使用范围
+
 .l-footer {
   height: 50px;
   position: sticky;

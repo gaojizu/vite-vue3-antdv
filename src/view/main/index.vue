@@ -4,26 +4,37 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-30 14:00:17
+ * @LastEditTime: 2022-08-31 08:38:06
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/view/main/index.vue
 -->
 <template>
   <div class="content">
     <div class="datashow">
       <div class="dbCom dbOne">
-        <div class="desc"></div>
+        <div class="desc">
+          详情
+          <div class="desc-show">第一个板块</div>
+        </div>
       </div>
       <div class="dbCom dbTwo">
-        <div class="desc"></div>
+        <div class="desc">
+          详情
+          <div class="desc-show">第二个板块</div>
+        </div>
       </div>
       <div class="dbCom dbThree">
-        <div class="desc"></div>
+        <div class="desc">
+          详情
+          <div class="desc-show">第三个板块</div>
+        </div>
       </div>
     </div>
     <hr />
     <div class="dashborad">
-      <dashBoardBubble></dashBoardBubble>
-      <candlestick></candlestick>
+      <div class="first-echart">
+        <dashBoardBubble></dashBoardBubble>
+        <candlestick></candlestick>
+      </div>
       <div style="margin-top: 10px"></div>
       <dashBoardLine></dashBoardLine>
     </div>
@@ -77,6 +88,22 @@ onMounted(() => {
       height: 30px;
       width: 100%;
       background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      .desc-show {
+        display: none;
+      }
+    }
+    .desc:hover {
+      background: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      height: 100%;
+      .desc-show {
+        display: block;
+      }
     }
   }
   .dbOne {
@@ -92,6 +119,12 @@ onMounted(() => {
 .dashborad {
   padding: 10px;
   background-color: #fff;
+  .first-echart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 .trigger {
   font-size: 18px;

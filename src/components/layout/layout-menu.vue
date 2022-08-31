@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-30 08:15:08
+ * @LastEditTime: 2022-08-31 08:52:59
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layout-menu.vue
 -->
 <template>
@@ -51,7 +51,6 @@ import menuLists from "../../assets/js/menu.js";
 
 const selectedKeys = ref(["0"]);
 const router = useRouter();
-//接收父组传递过来的值
 const props = defineProps({
   collapsed: Boolean,
 });
@@ -67,7 +66,7 @@ let toPage = (path) => {
   position: sticky;
   top: 0;
   @extend .flex-row-center;
-  h3{
+  h3 {
     color: #fff;
   }
 }
