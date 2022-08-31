@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 16:27:25
- * @LastEditTime: 2022-08-29 08:10:43
+ * @LastEditTime: 2022-08-30 09:28:26
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/App.vue
 -->
 <template>
@@ -19,9 +19,9 @@
           <a-layout-content class="layout-content">
             <router-view></router-view>
           </a-layout-content>
-          <a-layout-footer :style="{ textAlign: 'center' }">
+          <!-- <a-layout-footer class="l-footer" :style="{ textAlign: 'center' }">
             VITE VUE3 ©2022 Created by Clearlove
-          </a-layout-footer>
+          </a-layout-footer> -->
         </div>
       </a-layout>
     </a-layout>
@@ -49,10 +49,17 @@ const { state } = useStore();
 .trigger:hover {
   color: #1890ff;
 }
+// 这里不做任何样式限制，为了直接可以获取到使用区域的正常使用范围
 .layout-content {
-  margin: 24px 16px;
-  padding: 24px;
-  background: #fff;
-  min-height: 300px;
+  width: calc(100% - 200px); //将menu宽度去掉
+  // margin: 24px 16px;
+  // padding: 24px;
+  // background: #fff;
+  // min-height: 300px;
+}
+.l-footer {
+  height: 50px;
+  position: sticky;
+  bottom: 0px;
 }
 </style>

@@ -7,7 +7,7 @@ import axios from "axios";
 // import qs  from 'qs'
 console.log(import.meta.env);
 const config = {
-  baseURL: import.meta.env.VITE_APP_BASE_URL, //配置区分环境
+  baseURL: import.meta.env.VITE_APP_BASE_ECHART_URL, //配置区分环境 VITE_APP_BASE_ECHART_URL  、 VITE_APP_BASE_URL
   timeOut: 30000,
   header: {
     "Content-Type": "application/json;charset=UTF-8", //配置默认post请求头信息
@@ -37,7 +37,7 @@ server.interceptors.response.use(
     console.log("res", response);
     // 2**范围内的都会触发该函数
     if (response.status == 200) {
-      return Promise.resolve(response);
+      return Promise.resolve(response.data); //默认是将data获取出来
     } else {
       return Promise.reject(response);
     }

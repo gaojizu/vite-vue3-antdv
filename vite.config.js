@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-23 13:06:35
+ * @LastEditTime: 2022-08-29 09:24:03
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/vite.config.js
  */
 import { defineConfig } from "vite";
@@ -21,6 +21,10 @@ export default defineConfig({
         target: "https://v-api.2345.com/shortVideo", //这是跨域的原本地址
         changeOrigin: true, //是否开启跨域
         // rewrite: api => api.replace(/^\/api/, '') // 将真正的请求使用正则替换掉api因为url本身就不存在api 这里相当于重写了路径
+      },
+      "/data": {
+        target: "https://echarts.apache.org/examples", //这是跨域的原本地址 ECAHRT地址代理
+        changeOrigin: true, //是否开启跨域
       },
     },
   },

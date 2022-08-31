@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-26 16:34:28
+ * @LastEditTime: 2022-08-31 08:12:00
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/main.js
  */
 import { createApp } from "vue";
@@ -19,10 +19,9 @@ import {
   font,
 } from "../src/assets/js/setMain.js";
 import "ant-design-vue/dist/antd.css";
-//引入echart插件
-// import * as echarts from 'echarts'
 // 进行挂载路由文件
 const app = createApp(App);
+
 //进行错误信息捕捉
 app.config.errorHandler = (err, vm, info) => {
   console.error(err);

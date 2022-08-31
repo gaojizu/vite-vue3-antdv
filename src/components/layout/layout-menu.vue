@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-29 08:12:05
+ * @LastEditTime: 2022-08-30 08:15:08
  * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layout-menu.vue
 -->
 <template>
@@ -15,7 +15,7 @@
       :trigger="null"
       collapsible
     >
-      <div class="logo">logo</div>
+      <div class="logo"><h3>LOGO</h3></div>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <div v-for="(item, index) in menuLists" :key="index">
           <template v-if="item.children && item.children.length > 0">
@@ -64,10 +64,12 @@ let toPage = (path) => {
   height: 64px;
   background: $logo-color-bgc;
   //   background: rgba(0, 0, 0, 0.85);
-  color: #fff;
   position: sticky;
   top: 0;
   @extend .flex-row-center;
+  h3{
+    color: #fff;
+  }
 }
 
 .site-layout .site-layout-background {
