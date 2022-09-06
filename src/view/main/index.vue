@@ -4,8 +4,8 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-31 08:38:06
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/view/main/index.vue
+ * @LastEditTime: 2022-09-02 15:27:23
+ * @FilePath: /vite-vue3-antdv/src/view/main/index.vue
 -->
 <template>
   <div class="content">
@@ -82,6 +82,8 @@ onMounted(() => {
     width: 32%;
     height: 100px;
     position: relative;
+    border-radius: 5px;
+
     .desc {
       position: absolute;
       bottom: 0px;
@@ -93,6 +95,7 @@ onMounted(() => {
       justify-content: center;
       align-items: center;
       color: #fff;
+      border-radius: 5px;
       .desc-show {
         display: none;
       }
@@ -100,6 +103,7 @@ onMounted(() => {
     .desc:hover {
       background: rgba(0, 0, 0, 0.6);
       cursor: pointer;
+      transition: 0.5s;
       height: 100%;
       .desc-show {
         display: block;
@@ -107,13 +111,13 @@ onMounted(() => {
     }
   }
   .dbOne {
-    background-color: #6badec;
+    background-color: #001529;
   }
   .dbTwo {
-    background-color: #f5b426;
+    background-color: #001529;
   }
   .dbThree {
-    background-color: #f54df3;
+    background-color: #001529;
   }
 }
 .dashborad {

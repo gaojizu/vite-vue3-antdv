@@ -4,8 +4,8 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-31 08:12:00
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/main.js
+ * @LastEditTime: 2022-09-06 14:38:24
+ * @FilePath: /vite-vue3-antdv/src/main.js
  */
 import { createApp } from "vue";
 import "./style.css";
@@ -18,6 +18,7 @@ import {
   createFromIconfontCN,
   font,
 } from "../src/assets/js/setMain.js";
+// XXX: 引入自定义插件进行测试
 import "ant-design-vue/dist/antd.css";
 // 进行挂载路由文件
 const app = createApp(App);
@@ -38,7 +39,4 @@ app.config.warnHandler = (warn, vm, info) => {
 app.use(antd).component("localIcon", font);
 app.use(router);
 app.use(createPinia());
-app.config.globalProperties.test = () => {
-  return true;
-};
 app.mount("#app");

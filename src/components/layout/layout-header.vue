@@ -4,8 +4,8 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-26 14:00:15
- * @LastEditTime: 2022-08-31 09:49:18
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/src/components/layout/layout-header.vue
+ * @LastEditTime: 2022-09-02 13:37:47
+ * @FilePath: /vite-vue3-antdv/src/components/layout/layout-header.vue
 -->
 <template>
   <div>
@@ -45,6 +45,7 @@ let changeCollapsed = () => {
 }
 .header-bgc {
   background: $nav-bgc;
+  width: 100%;
   padding: 0;
 
   .header-line {

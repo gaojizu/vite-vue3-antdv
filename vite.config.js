@@ -1,11 +1,11 @@
 /*
  * @use:
- * @description:
+ * @description: vite 默认配置
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-08-23 12:59:43
- * @LastEditTime: 2022-08-29 09:24:03
- * @FilePath: /vue3STUBYLOCAL/Users/leimingwei/Desktop/LeiMingWei/viteItems/vite-vue3-antdv/vite.config.js
+ * @LastEditTime: 2022-09-05 14:17:04
+ * @FilePath: /vite-vue3-antdv/vite.config.js
  */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -41,5 +41,8 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
+  // optimizeDeps: {
+  //   exclude: ['vue-demi']
+  // },
   base: "./", //  避免打包之后出现文件找不到资源 使用live Server打开
 });
