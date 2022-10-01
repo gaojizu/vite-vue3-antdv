@@ -50,12 +50,9 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import menuLists from "../../assets/js/menu.js";
 const router = useRouter();
-console.log(router.currentRoute._value.meta.name);
-console.log(router.currentRoute);
 let { _value } = router.currentRoute;
-console.log(_value);
 // TODO: 设置当前的菜单位置
-const selectedKeys = ref(["1"]);
+const selectedKeys = ref(["0"]);
 const props = defineProps({
   collapsed: Boolean,
 });

@@ -4,7 +4,7 @@
  * @SpecialInstructions: 无
  * @Author: clearlove
  * @Date: 2022-09-02 10:21:36
- * @LastEditTime: 2022-09-06 14:38:31
+ * @LastEditTime: 2022-09-06 16:00:56
  * @FilePath: /vite-vue3-antdv/src/view/data_panel/index.vue
 -->
 <template>
@@ -48,12 +48,12 @@
   </div>
 </template>
 <script setup>
-import { dataLists } from "../../assets/mock/data_panel.js";
 import { getCurrentInstance, onMounted } from "vue";
-onMounted(() => {
-  const { proxy } = getCurrentInstance();
-  console.log(proxy);
-});
+import {dataLists} from '../../../src/assets/mock/data_panel.js'
+// onMounted(() => {
+//   const { proxy } = getCurrentInstance();
+//   console.log(proxy);
+// });
 </script>
 <style lang="scss" scoped>
 .data-list {

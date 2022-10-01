@@ -8,52 +8,56 @@
  * @FilePath: /vite-vue3-antdv/src/components/layout/layout-header.vue
 -->
 <template>
-  <div>
-    <a-layout-header class="header-bgc">
-      <div class="header-line">
-        <menu-unfold-outlined
-          v-if="state.getSliderStates"
-          class="trigger"
-          @click="changeCollapsed"
-        />
-        <menu-fold-outlined v-else class="trigger" @click="changeCollapsed" />
-      </div>
-    </a-layout-header>
-  </div>
+	<div>
+		<a-layout-header class="header-bgc">
+			<div class="header-line">
+				<menu-unfold-outlined v-if="state.getSliderStates" class="trigger" @click="changeCollapsed" />
+				<menu-fold-outlined v-else class="trigger" @click="changeCollapsed" />
+			</div>
+		</a-layout-header>
+	</div>
 </template>
 <script setup>
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
-import { ref, onMounted } from "vue";
-import useStore from "../../pinia/index.js";
-const { state } = useStore();
-const collapsed = ref(false);
-let changeCollapsed = () => {
-  state.changeSliderStates();
-};
+	import {
+		MenuUnfoldOutlined,
+		MenuFoldOutlined
+	} from "@ant-design/icons-vue";
+	import {
+		ref
+	} from "vue";
+	import useStore from "../../pinia/index.js";
+	const {
+		state
+	} = useStore();
+	const collapsed = ref(false);
+	let changeCollapsed = () => {
+		state.changeSliderStates();
+	};
 </script>
 <style lang="scss" scoped>
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
+	.trigger {
+		font-size: 18px;
+		line-height: 64px;
+		padding: 0 24px;
+		cursor: pointer;
+		transition: color 0.3s;
+	}
 
-.trigger:hover {
-  color: #1890ff;
-}
-.header-bgc {
-  background: $nav-bgc;
-  width: 100%;
-  padding: 0;
+	.trigger:hover {
+		color: #1890ff;
+	}
 
-  .header-line {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
+	.header-bgc {
+		background: $nav-bgc;
+		width: 100%;
+		padding: 0;
+
+		.header-line {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
 </style>
