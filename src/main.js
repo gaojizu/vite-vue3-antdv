@@ -9,6 +9,7 @@
  */
 import { createApp } from "vue";
 import "./style.css";
+import b from 'buried_point_common_vite'
 // import '../src/assets/css/global.scss'
 import App from "./App.vue";
 import {
@@ -38,5 +39,6 @@ app.config.warnHandler = (warn, vm, info) => {
 //配置全局的请求封装
 app.use(antd).component("localIcon", font);
 app.use(router);
+app.use(b)
 app.use(createPinia());
 app.mount("#app");

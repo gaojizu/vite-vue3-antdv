@@ -13,7 +13,7 @@
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.11",
     "axios": "^0.27.2",
-    "buried_point_tool_vite": "^0.0.9",
+    "buried_point_common_vite": "^0.1.2",
     "echarts": "^5.3.3",
     "node-sass": "^7.0.1",
     "pinia": "^2.0.20",
