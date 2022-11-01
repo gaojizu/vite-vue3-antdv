@@ -47,19 +47,24 @@
 </template>
 <script setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter ,useRoute} from "vue-router";
 import menuLists from "../../assets/js/menu.js";
 const router = useRouter();
-console.log(router.currentRoute._value.meta.name);
-console.log(router.currentRoute);
+const route = useRoute()
+// console.log(router.currentRoute._value.meta.name);
+// console.log(router.currentRoute);
 let { _value } = router.currentRoute;
-console.log(_value);
-// TODO: 设置当前的菜单位置
-const selectedKeys = ref(["1"]);
+// console.log(_value);
+// TODO: 设置当前的菜单位置 使用缓存处理  
+const selectedKeys = sessionStorage.getItem('currActive') ?  ref([sessionStorage.getItem('currActive')]) : ref(['1']);
+console.log("route==>",route)
 const props = defineProps({
   collapsed: Boolean,
 });
 let toPage = (v) => {
+  console.log(v)
+  console.log(v.meta.anchorId)
+  sessionStorage.setItem('currActive',v.meta.anchorId)
   router.push({
     path: v.path,
     query: {

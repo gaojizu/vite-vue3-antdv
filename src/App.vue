@@ -18,8 +18,7 @@
 					<layout-header></layout-header>
 					<div class="bfc">
 						<a-layout-content :class="
-                state.getSliderStates ? 'layout-content-min' : 'layout-content'
-              ">
+                state.getSliderStates ? 'layout-content-min' : 'layout-content'">
 							<router-view></router-view>
 						</a-layout-content>
 					</div>
